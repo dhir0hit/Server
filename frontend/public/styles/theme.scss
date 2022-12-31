@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400&family=Palanquin:wght@100;200;300;400&family=Quattrocento:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+/*
+ * Fonts
+
+ */
+$text-big-heading: 'Catamaran', sans-serif;
+$text-small-heading: 'Quattrocento', serif;
+$text-normal: 'Palanquin', sans-serif;
+/*
+ * Dark Mode
+ */
+$primary-color-darkMode: #212f45;
+$primary-color2-darkMode: #144552;
+$primary-color3-darkMode: #006466;
+
+$secondary-color-darkMode: #312244;
+$secondary-color2-darkMode: #3e1f47;
+$secondary-color3-darkMode: #4d194d;
+$secondary-color4-darkMode: #6a226a;
+
+$text-color-darkMode: #f5f3f4;
+
+$background-color-darkMode: #272640;
+
+
+/*
+ * Light Mode
+ */
+$primary-color-lightMode: #006466;
+$primary-color2-lightMode: #144552;
+$primary-color3-lightMode: #212f45;
+
+$secondary-color-lightMode: #4d194d;
+$secondary-color2-lightMode: #3e1f47;
+$secondary-color3-lightMode: #312244;
+
+$text-color-lightMode: #272640;
+
+$background-color-lightMode: #f5f3f4;
+
+
+
+/*
+ * transparent
+ */
+$transparent: rgba(0, 0, 0, 0.2);

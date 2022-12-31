@@ -1,0 +1,80 @@
+@use '../theme';
+
+.account-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-block: 1px;
+
+//    gap: 5px;
+    overflow-y: scroll;
+    height: 85%;
+
+}
+
+.account-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+
+    border-bottom: 1px solid gray;
+    padding: 1rem;
+    padding-inline: 1.5rem;
+
+    &:hover {
+        background: theme.$transparent;
+        cursor: pointer;
+    }
+    &:active {
+        background: rgba(0,0,0,0.5);
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 20px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            gap: 0;
+
+            * {
+                padding: 0;
+                margin: 0;
+                font-weight: 500;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            h4 {
+                font-size: 0.9rem;
+            }
+        }
+
+        span {
+            svg {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+    span {
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.account-element.favorite {
+    * {color: #ff7700;}
+}

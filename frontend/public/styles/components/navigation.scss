@@ -1,0 +1,170 @@
+@use '../theme';
+@use 'navigationIcon.scss';
+
+$width-split: 600px;
+
+.navigation.trigger {
+    display: block;
+    .icon {
+        .line {
+            background-color: theme.$text-color-lightMode;
+        }
+    }
+}
+.navigation.container {
+    padding: 1rem;
+    // background-color: theme.$background-color-lightMode;
+    display: flex;
+    justify-content: space-around;
+    background:  theme.$transparent;
+
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        list-style-type: none;
+        align-items: flex-end;
+        width: 100%;
+        margin: 0;
+        li {
+            a {
+                display: block;
+                text-align: end;
+                text-decoration: none;
+                color: theme.$secondary-color3-lightMode;
+                font-family: theme.$text-big-heading;
+                font-weight: 600;
+                font-size: 1.2rem;
+                padding: 0.5rem 1rem;
+
+
+                &.active {
+                    background-color: theme.$primary-color-lightMode;
+                    color: theme.$text-color-darkMode;
+                    &:hover {
+                        background-color: theme.$background-color-darkMode;
+                    }
+                &:active {
+                        background-color: theme.$primary-color3-lightMode;
+                    }
+                }
+            &:hover {
+                    background-color: theme.$secondary-color-lightMode;
+                    color: theme.$text-color-darkMode;
+                }
+            &:active {
+                    background-color: theme.$primary-color2-lightMode;
+                }
+            }
+        }
+    }
+}
+
+.dark_color_scheme {
+
+  .navigation.trigger {
+        .icon {
+            .line {
+                background-color: theme.$text-color-darkMode;
+            }
+        }
+    }
+
+  .navigation.container {
+//        background-color: theme.$background-color-darkMode;
+        ul {
+            li {
+                a {
+                    color: theme.$secondary-color4-darkMode;
+
+                    &.active {
+                        background-color: theme.$primary-color3-darkMode;
+                        color: theme.$text-color-lightMode;
+                        &:hover {
+                            background-color: theme.$background-color-lightMode;
+                        }
+            &:active {
+                            background-color: theme.$primary-color3-darkMode;
+                        }
+                    }
+          &:hover {
+                        background-color: theme.$secondary-color3-darkMode;
+                        color: theme.$text-color-lightMode;
+                    }
+          &:active {
+                        background-color: theme.$primary-color3-darkMode;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $width-split) {
+    .navigation.trigger {
+        //display: flex;
+    //flex-direction: row;
+    //justify-content: end;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+
+    button {
+        border: none;
+        background-color: transparent;
+
+        svg {
+            transform: rotateY(160rad);
+            width: 40px;
+            height: 40px;
+        }
+
+      &:hover {
+            svg {
+                fill-opacity: 0.5;
+            }
+        }
+    }
+    }
+  .navigation.container {
+        //background-color: aqua;
+    //height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    ul {
+        //display: none;
+      //z-index: -1;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      flex-direction: column;
+      li {
+          width: 100%;
+      }
+    }
+    }
+}
+
+@media only screen and (min-width: $width-split) {
+    .navigation.trigger {
+        display: none;
+    }
+  .navigation.container {
+        //background-color: red;
+
+    ul {
+        flex-direction: row;
+        li {
+            a {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    }
+    }
+}

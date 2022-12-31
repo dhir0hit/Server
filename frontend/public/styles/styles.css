@@ -1,0 +1,753 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400&family=Palanquin:wght@100;200;300;400&family=Quattrocento:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+/*
+ * Fonts
+
+ */
+/*
+ * Dark Mode
+ */
+/*
+ * Light Mode
+ */
+/*
+ * transparent
+ */
+main.pwdmanager.create {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+main.pwdmanager.create aside {
+  padding: 1rem;
+}
+main.pwdmanager.create aside ul {
+  margin-block: 0rem;
+}
+main.pwdmanager.create aside div {
+  padding-block: 0.3rem;
+}
+main.pwdmanager.create aside div h4, main.pwdmanager.create aside div p {
+  margin: 0;
+}
+main.pwdmanager.create aside div p {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-block: 0.2rem;
+  word-wrap: normal;
+}
+main.pwdmanager.create aside div p span {
+  padding-inline: 1rem;
+}
+main.pwdmanager.create aside div p.invalid {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+main.pwdmanager.create aside div#password_info p {
+  width: 10%;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+main.pwdmanager.create form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  max-width: 600px;
+  padding: 1rem;
+}
+main.pwdmanager.create form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+}
+main.pwdmanager.create form label *:nth-child(1) {
+  background-color: #f5f3f4;
+  border: none;
+  display: flex;
+  outline: 1px solid #272640;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  padding-block: 0.2rem;
+}
+main.pwdmanager.create form label *:nth-child(1) button {
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+main.pwdmanager.create form label *:nth-child(1) button span {
+  padding: 0;
+  margin: 0;
+  background: none !important;
+}
+main.pwdmanager.create form label *:nth-child(1) button:hover {
+  background: none;
+}
+main.pwdmanager.create form label *:nth-child(1) span {
+  margin-left: -0.7rem;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  outline: none !important;
+}
+main.pwdmanager.create form label *:nth-child(1) input {
+  flex: 1;
+  font-size: 1.2rem;
+  background: none;
+  border: none !important;
+  outline: none !important;
+}
+main.pwdmanager.create form label *:nth-child(1):selected {
+  outline: 1px solid #272640;
+}
+main.pwdmanager.create form label#favorite {
+  margin-top: 0.2rem;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+main.pwdmanager.create form label#favorite input {
+  border: none;
+  outline: none;
+}
+main.pwdmanager.create form label#favorite input ~ span.material-symbols-rounded {
+  color: gray;
+}
+main.pwdmanager.create form label#favorite input:checked ~ span.material-symbols-rounded {
+  color: orange;
+}
+main.pwdmanager.create form label#website div input {
+  padding-left: 10px;
+}
+main.pwdmanager.create form button {
+  background-color: #212f45;
+  color: #f5f3f4;
+  padding: 0.5rem;
+  border: none;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+main.pwdmanager.create form button:hover {
+  background-color: #144552;
+}
+main.pwdmanager.create form button:active {
+  background-color: #006466;
+}
+
+.dark_color_scheme main.pwdmanager.create form label {
+  outline: none;
+}
+.dark_color_scheme main.pwdmanager.create form label *:nth-child(1) {
+  background-color: #272640;
+  outline: 1px solid #f5f3f4;
+}
+.dark_color_scheme main.pwdmanager.create button {
+  background-color: #006466;
+  color: #272640;
+}
+.dark_color_scheme main.pwdmanager.create button:hover {
+  background-color: #144552;
+}
+.dark_color_scheme main.pwdmanager.create button:active {
+  background-color: #212f45;
+}
+
+.pwdmanager.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pwdmanager.detail .uppercontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1.5rem;
+}
+.pwdmanager.detail .uppercontainer .controls {
+  gap: 0;
+}
+.pwdmanager.detail .uppercontainer .controls a, .pwdmanager.detail .uppercontainer .controls button {
+  background: transparent;
+  border: none;
+  padding: 1rem;
+}
+.pwdmanager.detail .uppercontainer .controls a:hover, .pwdmanager.detail .uppercontainer .controls button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.pwdmanager.detail .uppercontainer .controls a svg, .pwdmanager.detail .uppercontainer .controls button svg {
+  width: 30px;
+  height: 30px;
+}
+.pwdmanager.detail .uppercontainer .controls a.favorite path, .pwdmanager.detail .uppercontainer .controls button.favorite path {
+  color: #ff7700;
+}
+.pwdmanager.detail .uppercontainer div {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.pwdmanager.detail .uppercontainer div svg {
+  width: 120px;
+  height: 120px;
+}
+.pwdmanager.detail .uppercontainer div div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pwdmanager.detail .uppercontainer div div * {
+  padding: 0;
+  margin: 0;
+}
+.pwdmanager.detail .uppercontainer div div input, .pwdmanager.detail .uppercontainer div div h2 {
+  text-transform: capitalize;
+  font-size: 3rem;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom: 3px solid transparent;
+}
+.pwdmanager.detail .uppercontainer div div input {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+.pwdmanager.detail .midcontainer {
+  margin-inline: 3rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+.pwdmanager.detail .midcontainer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-inline: 1.5rem;
+}
+.pwdmanager.detail .midcontainer div div {
+  margin: 0;
+  padding: 0;
+}
+.pwdmanager.detail .midcontainer div div button {
+  background: transparent;
+  border: none;
+}
+.pwdmanager.detail .midcontainer div div button svg {
+  width: 20px;
+  height: 20px;
+}
+.pwdmanager.detail .midcontainer div input, .pwdmanager.detail .midcontainer div h3 {
+  background: transparent;
+  text-align: end;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0;
+  border-bottom: 3px solid transparent;
+}
+.pwdmanager.detail .midcontainer div input {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+.pwdmanager.detail .midcontainer div.password div h3 {
+  -webkit-filter: blur(5px);
+}
+.pwdmanager.detail .midcontainer div.password div h3:hover {
+  -webkit-filter: blur(0);
+}
+.pwdmanager.detail .midcontainer div.additionalInfo {
+  flex-direction: column;
+}
+.pwdmanager.detail .midcontainer div.additionalInfo h3 {
+  margin-bottom: 0;
+  text-align: left;
+}
+.pwdmanager.detail .midcontainer div.additionalInfo p {
+  border-bottom: 3px solid transparent;
+}
+.pwdmanager.detail .midcontainer div.additionalInfo p, .pwdmanager.detail .midcontainer div.additionalInfo input {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+}
+.pwdmanager.detail .bottomcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.pwdmanager.detail .bottomcontainer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.pwdmanager.detail .bottomcontainer div h4 {
+  margin: 0;
+}
+
+#passwordstrength.progress {
+  height: 10px;
+  background-color: aqua;
+  width: 100%;
+}
+
+.account-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-block: 1px;
+  overflow-y: scroll;
+  height: 85%;
+}
+
+.account-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+  padding: 1rem;
+  padding-inline: 1.5rem;
+}
+.account-element:hover {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.account-element:active {
+  background: rgba(0, 0, 0, 0.5);
+}
+.account-element div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.account-element div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 0;
+}
+.account-element div div * {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+.account-element div div h2 {
+  font-size: 1.7rem;
+}
+.account-element div div h4 {
+  font-size: 0.9rem;
+}
+.account-element div span svg {
+  width: 70px;
+  height: 70px;
+}
+.account-element span svg {
+  width: 30px;
+  height: 30px;
+}
+
+.account-element.favorite * {
+  color: #ff7700;
+}
+
+.pwdmanager {
+  margin-top: 1rem;
+}
+
+.navigation.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+.navigation.icon .line {
+  /*margin: 3px;*/
+  height: 2px;
+  width: 100%;
+  transition: transform 2s 1s, opacity 1s, width 3s 1s;
+  transition-timing-function: ease;
+}
+.navigation.icon .line:nth-child(1) {
+  width: 100%;
+}
+.navigation.icon .line:nth-child(2) {
+  width: 70%;
+  opacity: 1;
+}
+.navigation.icon .line:nth-child(3) {
+  width: 50%;
+}
+.navigation.icon.active .line {
+  /* Opposite because of
+  * change of class before hand
+  * After that transition will happen
+  */
+  transition: width 1s, transform 2s 1s, opacity 1s 2s;
+}
+.navigation.icon.active .line:nth-child(1) {
+  width: 100%;
+  transform: translateY(10px) rotate(50deg);
+  /*position: absolute;*/
+}
+.navigation.icon.active .line:nth-child(2) {
+  width: 100%;
+  opacity: 0;
+  /*position: absolute;*/
+}
+.navigation.icon.active .line:nth-child(3) {
+  width: 100%;
+  transform: translateY(-10px) rotate(-50deg);
+  /*position: absolute;*/
+}
+
+.navigation.trigger {
+  display: block;
+}
+.navigation.trigger .icon .line {
+  background-color: #272640;
+}
+
+.navigation.container {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.2);
+}
+.navigation.container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style-type: none;
+  align-items: flex-end;
+  width: 100%;
+  margin: 0;
+}
+.navigation.container ul li a {
+  display: block;
+  text-align: end;
+  text-decoration: none;
+  color: #312244;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+.navigation.container ul li a.active {
+  background-color: #006466;
+  color: #f5f3f4;
+}
+.navigation.container ul li a.active:hover {
+  background-color: #272640;
+}
+.navigation.container ul li a.active:active {
+  background-color: #212f45;
+}
+.navigation.container ul li a:hover {
+  background-color: #4d194d;
+  color: #f5f3f4;
+}
+.navigation.container ul li a:active {
+  background-color: #144552;
+}
+
+.dark_color_scheme .navigation.trigger .icon .line {
+  background-color: #f5f3f4;
+}
+.dark_color_scheme .navigation.container ul li a {
+  color: #6a226a;
+}
+.dark_color_scheme .navigation.container ul li a.active {
+  background-color: #006466;
+  color: #272640;
+}
+.dark_color_scheme .navigation.container ul li a.active:hover {
+  background-color: #f5f3f4;
+}
+.dark_color_scheme .navigation.container ul li a.active:active {
+  background-color: #006466;
+}
+.dark_color_scheme .navigation.container ul li a:hover {
+  background-color: #4d194d;
+  color: #272640;
+}
+.dark_color_scheme .navigation.container ul li a:active {
+  background-color: #006466;
+}
+
+@media only screen and (max-width: 600px) {
+  .navigation.trigger {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+  }
+  .navigation.trigger button {
+    border: none;
+    background-color: transparent;
+  }
+  .navigation.trigger button svg {
+    transform: rotateY(160rad);
+    width: 40px;
+    height: 40px;
+  }
+  .navigation.trigger button:hover svg {
+    fill-opacity: 0.5;
+  }
+  .navigation.container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .navigation.container ul {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    flex-direction: column;
+  }
+  .navigation.container ul li {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .navigation.trigger {
+    display: none;
+  }
+  .navigation.container ul {
+    flex-direction: row;
+  }
+  .navigation.container ul li a {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+.pwdmanager.navigation {
+  margin-top: 1px;
+}
+.pwdmanager.navigation ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+}
+.pwdmanager.navigation ul li {
+  display: block;
+  list-style-type: none;
+  flex: 1;
+}
+.pwdmanager.navigation ul li a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem;
+  color: #272640;
+  background: rgba(0, 0, 0, 0.2);
+  font-family: "Catamaran", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.pwdmanager.navigation ul li a.active {
+  background: #f5f3f4;
+}
+.pwdmanager.navigation ul li a.active:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.pwdmanager.navigation ul li a:hover {
+  background: #f5f3f4;
+}
+
+.dark_color_scheme .pwdmanager.navigation ul li a {
+  color: #f5f3f4;
+}
+.dark_color_scheme .pwdmanager.navigation ul li a.active {
+  background: #272640;
+}
+.dark_color_scheme .pwdmanager.navigation ul li a.active:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.dark_color_scheme .pwdmanager.navigation ul li a:hover {
+  background: #272640;
+}
+
+@keyfram child1 {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+.Loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Loading div {
+  position: relative;
+}
+.Loading div div {
+  position: absolute;
+  font-size: 3rem;
+  font-family: "Major Mono Display", monospace;
+}
+.Loading div div:nth-child(1) {
+  transition: transform 0.7s linear 0s, rotate 5s linear 0.7s;
+}
+.Loading div div:nth-child(2) {
+  transition: transform 0.7s linear 0.5s, rotate 5s linear 1.2s;
+}
+.Loading div div:nth-child(3) {
+  transition: transform 0.7s linear 1s, rotate 5s linear 1.7s;
+}
+.Loading div div:nth-child(4) {
+  transition: transform 0.7s linear 1.5s, rotate 5s linear 2.2s;
+}
+.Loading div div:nth-child(5) {
+  transition: transform 0.7s linear 2s, rotate 5s linear 2.7s;
+}
+.Loading div div:nth-child(6) {
+  transition: transform 0.7s linear 2.5s, rotate 5s linear 3.2s;
+}
+.Loading div div:nth-child(7) {
+  transition: transform 0.7s linear 3s, rotate 5s linear 3.7s;
+}
+.Loading div div:nth-child(8) {
+  transition: transform 0.7s linear 3.5s, rotate 5s linear 4.2s;
+}
+.Loading div div:nth-child(9) {
+  transition: transform 0.7s linear 4s, rotate 5s linear 4.7s;
+}
+.Loading div div:nth-child(10) {
+  transition: transform 0.7s linear 4.5s, rotate 5s linear 5.2s;
+}
+.Loading:hover div div {
+  transform: translate(-100px);
+  rotate: 360deg;
+}
+
+#alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+#alert .hover.container {
+  width: 500px;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  flex-direction: column;
+  background-color: black;
+}
+#alert .hover.container * {
+  padding: 0;
+  margin: 0;
+}
+#alert .hover.container .controls {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+#alert .hover.container .controls button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: "Courier New", Courier, monospace, Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding-block: 0.5rem;
+}
+#alert .hover.container .controls button.danger {
+  color: rgb(134, 0, 0);
+  text-transform: uppercase;
+}
+#alert .hover.container .controls button.danger:hover {
+  background: rgba(134, 0, 0, 0.15);
+}
+#alert .hover.container .controls button.danger:active {
+  background: rgba(134, 0, 0, 0.4);
+}
+#alert .hover.container .controls button.positive:hover {
+  background: rgba(127, 255, 212, 0.15);
+}
+#alert .hover.container .controls button.positive:active {
+  background: rgba(127, 255, 212, 0.4);
+}
+#alert .hover.container .controls button.normal:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+#alert .hover.container .controls button.normal:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  color: #272640;
+  font-family: "Catamaran", sans-serif;
+  justify-content: flex-start;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f5f3f4;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  max-width: 1500px;
+  overflow: hidden;
+}
+
+.dark_color_scheme {
+  background-color: #272640;
+}
+.dark_color_scheme * {
+  color: #f5f3f4;
+}
+
+/*# sourceMappingURL=styles.css.map */

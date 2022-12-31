@@ -1,0 +1,9 @@
+@use 'views/pwdmanager/create';
+@use 'views/pwdmanager/index';
+@use 'views/pwdmanager/detail';
+
+@use 'components/accountList';
+
+.pwdmanager {
+    margin-top: 1rem;
+}

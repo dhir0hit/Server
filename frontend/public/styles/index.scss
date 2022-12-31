@@ -1,0 +1,53 @@
+// importing page styles
+@use 'theme';
+@use 'pwdmanager';
+
+// importing component styles
+@use 'components/navigation';
+@use 'components/pmanagerNavigation';
+@use 'components/Loading';
+@use 'components/alert';
+
+* {
+    box-sizing: border-box;
+    color: theme.$text-color-lightMode;
+    font-family: "Catamaran", sans-serif;
+    justify-content: flex-start;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: theme.$background-color-lightMode;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: theme.$transparent;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+
+    max-width: 1500px;
+    overflow: hidden;
+//    position: fixed;
+//    text-align: center;
+}
+
+.dark_color_scheme {
+    background-color: theme.$background-color-darkMode;
+
+    * {
+        color: theme.$text-color-darkMode;
+    }
+}
+
+

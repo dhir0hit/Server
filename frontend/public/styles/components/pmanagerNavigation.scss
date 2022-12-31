@@ -1,0 +1,70 @@
+@use '../theme';
+
+.pwdmanager.navigation {
+    margin-top: 1px;
+    ul {
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        flex-direction: row;
+        gap: 1px;
+
+        li {
+            display: block;
+            list-style-type: none;
+            flex: 1;
+
+
+            a {
+                display: block;
+                text-decoration: none;
+                width: 100%;
+                padding: 1rem;
+
+                color: theme.$text-color-lightMode;
+                background: theme.$transparent;
+
+                font-family: theme.$text-big-heading;
+                font-size: 1rem;
+                font-weight: 600;
+                text-align: center;
+
+                &.active {
+                    background: theme.$background-color-lightMode;
+
+                    &:hover {
+                        background: theme.$transparent;
+                    }
+                }
+
+                &:hover {
+                    background: theme.$background-color-lightMode;
+                }
+            }
+        }
+    }
+}
+
+.dark_color_scheme {
+    .pwdmanager.navigation {
+        ul {
+            li {
+                a {
+                    color: theme.$text-color-darkMode;
+
+                    &.active {
+                        background: theme.$background-color-darkMode;
+                        &:hover {
+                            background: theme.$transparent;
+                        }
+                    }
+
+                    &:hover {
+                        background: theme.$background-color-darkMode;
+                    }
+                }
+            }
+        }
+    }
+}

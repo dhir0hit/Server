@@ -1,0 +1,3 @@
+# Project exclude paths
+/backend/.yarn/
+/backend/.pnp.cjs

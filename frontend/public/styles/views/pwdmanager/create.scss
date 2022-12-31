@@ -1,0 +1,184 @@
+@use '../../theme';
+
+main.pwdmanager.create {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    aside {
+        padding: 1rem;
+
+        ul {
+            margin-block: 0rem;
+        }
+
+        div {
+            padding-block: 0.3rem;
+
+            h4, p {
+                margin: 0;
+            }
+            p {
+                background-color: rgba(0, 0, 0, 0.2);
+                padding-block: 0.2rem;
+                word-wrap: normal;
+
+                span {
+                    padding-inline: 1rem;
+                }
+
+                &.invalid {
+                    background-color: rgba(255, 0, 0, 0.2);
+                }
+            }
+
+            &#password_info {
+                p {
+                    width: 10%;
+                    background-color: rgba(255, 0, 0, 0.2);
+                }
+            }
+        }
+
+
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex: 1;
+        max-width: 600px;
+        padding: 1rem;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 1rem;
+
+            *:nth-child(1) {
+                background-color: theme.$background-color-lightMode;
+                border: none;
+                display: flex;
+                outline: 1px solid theme.$text-color-lightMode;
+                font-size: 1.2rem;
+                padding: 0.7rem;
+                padding-block: 0.2rem;
+
+                button {
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+
+                    span {
+                        padding: 0;
+                        margin: 0;
+                        background: none!important;
+                    }
+
+                    &:hover {
+                        background: none;
+                    }
+                }
+                span {
+
+                    margin-left: -0.7rem;
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0.3)!important;
+                    outline: none!important;
+                }
+                input {
+                    flex: 1;
+                    font-size: 1.2rem;
+                    background: none;
+                    border: none!important;
+                    outline: none!important;
+                }
+
+                &:selected {
+                    outline: 1px solid theme.$text-color-lightMode;
+                }
+            }
+
+            &#favorite {
+                margin-top: 0.2rem;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+
+                input{
+                    border: none;
+                    outline: none;
+
+                    & ~ span.material-symbols-rounded {
+                        color: gray;
+                    }
+                    &:checked ~ span.material-symbols-rounded {
+                        color: orange;
+                    }
+                }
+
+            }
+            &#website {
+                div {
+                    input {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+
+        button {
+            background-color: theme.$primary-color3-lightMode;
+            color: theme.$background-color-lightMode;
+            padding: 0.5rem;
+            border: none;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+
+            &:hover {
+                background-color: theme.$primary-color2-lightMode;
+            }
+            &:active {
+                background-color: theme.$primary-color-lightMode;
+            }
+        }
+    }
+}
+
+.dark_color_scheme {
+    main.pwdmanager.create {
+        aside {
+
+        }
+        form {
+            label {
+                outline: none;
+                *:nth-child(1) {
+                    background-color: theme.$background-color-darkMode;
+                    outline: 1px solid theme.$text-color-darkMode;
+                }
+            }
+            &#favorite {
+                span.material-symbols-rounded {
+//                    color: theme.$text-color-darkMode;
+                 }
+            }
+        }
+
+        button {
+            background-color: theme.$primary-color3-darkMode;
+            color: theme.$background-color-darkMode;
+
+            &:hover {
+                background-color: theme.$primary-color2-darkMode;
+            }
+            &:active {
+                background-color: theme.$primary-color-darkMode;
+            }
+        }
+    }
+}
