@@ -140,7 +140,103 @@
   ```bash
   sudo apt-get install npm
   ```
+- MongoDB
+  - To install MongoDB Database Follow this link<br/>
+  <a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/">Install MongoDb</a>
 
+### Setting up project
+- Clone the project
 ```bash
 git clone https://github.com/dhir0hit/Server.git
 ```
+- Go to Project Directory
+```bash
+cd Server/
+```
+- It will contain frontend and backend folder
+- Open front end folder by using bash command
+```bash
+cd frontend/
+```
+- Install Dependencies 
+```bash
+npm install
+```
+- Go back to project root directory
+```bash
+cd ../
+```
+- **Now let's do same for backend**
+```bash
+cd backend/
+```
+- Install Dependencies
+```bash
+npm install
+```
+<br/>
+<p><strong>There are couple of things needed to be changed before starting the server</strong></p>
+<p>Our backend is configured to be running at <strong>port 5000</strong></p>
+<p>We only need to change frontend setting</p>
+
+### Setup frontend hostname
+- Find our IP address
+```bash
+hostname -I
+```
+- You'll get output of ipaddress of your device, It usually looks like
+```
+xxx.xxx.xxx.xxx or 0.0.0.0
+```
+- Copy and paste it somewhere to remember
+
+<br/>
+
+- While in Root directory of project, Run this script.
+```bash
+nano frontend/Config.js
+```
+OR
+```bash
+cd frontend/
+```
+```bash
+nano Config.js
+```
+
+- This file contains configuration of api/backend infomartion so it can connect with backend
+- This is how file main struture will look like
+```js
+const ServerConfig =
+{
+    api: {
+        protocol: "http", // http or https
+        hostname: "0.0.0.0", // xxx.xxx.xxx.xxx or www.example.domain.com
+        port    : "5000", // 80 || 5000
+
+        passwordManager: {
+            name    : "pwdmanager", // Controller for password manager
+            routes: {
+                getAll: "get-all", // Get All Accounts Page 
+                getOne: "account", // Get One Accounts Page
+                create: "create",  // Create  Account  Page
+                update: "update",  // Update  Account  Page
+                delete: "delete"   // Delete  Account  Page
+            }
+        }
+    }
+}
+
+export default class Config {
+...
+}
+```
+- Replace hostname with **Your Ip Address**
+```js
+hostname: "99.99.99.99" // Here instead of 99.99.99.99 put your ip address
+```
+- if you want to use different port replace port here and in backend/www
+```js
+port: "5000" // Change port here
+```
+
