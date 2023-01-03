@@ -12,6 +12,18 @@
 <br/>
 <span>🔴Warning: No encryption included yet❗🔴</span>
 
+<br/>
+<br/>
+
+## Find your way
+<!-- TOC -->
+* [What Server Contains](#what-server-contains)
+  * [1. Frontend Server](#1-frontend-server)
+  * [2. Backend Server](#2-backend-server)
+  * [3. VS code Server (v4.9.1)](#3-vs-code-server-v491)
+  * [4. Includes Build for Android/IOS app](#4-includes-build-for-androidios-app)
+<!-- TOC -->
+
 
 ## What Server Contains
 
@@ -44,9 +56,17 @@
 
 <br/>
 
-### 3. VS code Server (v4.9.1)
+### 3. VS code Server v4.9.1
  - For editing and creating projects from remote machine
 
 <br/>
 
 ### 4. Includes Build for Android/IOS app
+// to be included
+
+<br/> 
+
+## How to Setup Server
+
+<pre>git clone <a href="https://github.com/dhir0hit/Server.git">https://github.com/dhir0hit/Server.git</a></pre>
+
