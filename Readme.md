@@ -177,9 +177,50 @@ npm install
 <br/>
 <p><strong>There are couple of things needed to be changed before starting the server</strong></p>
 <p>Our backend is configured to be running at <strong>port 5000</strong></p>
-<p>We only need to change frontend setting</p>
+<p>We only need to change few things</p>
 
-### Setup frontend hostname
+### Setup Backend configurations
+<p>Usually MongoDb run on 'localhost:27017', If there is changes made or mongodb running on different port change that</p>
+- From Project root go to backend and app.js
+
+```bash
+nano backend/app.js
+```
+OR
+
+```bash
+cd backend/
+```
+
+```bash
+nano app.js
+```
+- Here is how app.js looks like
+
+```js
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+const cors = require('cors');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var pwdManagerRouter = require('./routes/pwdmanager');
+
+
+var mongo = require('mongodb');
+const connectionUrl = 'mongodb://localhost:27017/myapp';
+var monk = require('monk');
+var db = monk(connectionUrl);
+```
+- Replace port number to your instance of MongoDb active port
+```js
+const connectionUrl = 'mongodb://localhost:27017/myapp'; // replace 27017 to change your mongodb port
+```
+
+### Setup frontend configurations
 - Find our IP address
 ```bash
 hostname -I
@@ -206,6 +247,8 @@ nano Config.js
 
 - This file contains configuration of api/backend infomartion so it can connect with backend
 - This is how file main struture will look like
+<p>🔴if any changes made in backend it can be changed here🔴</p>
+
 ```js
 const ServerConfig =
 {
@@ -235,8 +278,80 @@ export default class Config {
 ```js
 hostname: "99.99.99.99" // Here instead of 99.99.99.99 put your ip address
 ```
-- if you want to use different port replace port here and in backend/www
+- if you want to use different port replace port here and in backend/bin/www
 ```js
 port: "5000" // Change port here
 ```
 
+
+## Running The Server
+<p>In order to properly run server run Database then run backend then run frontend </p>
+
+### Running MongoDb
+<p>execute these commands to run mongodb</p>
+
+```bash
+sudo systemctl start mongod
+```
+
+<p>To run mongodb on startup</p>
+
+```bash
+sudo systemctl enable mongod
+```
+
+### Running Backend
+- From Project root go to backend directory
+
+```bash
+cd backend/
+```
+
+- Execute this command in Development mode or want to make any changes
+
+```bash
+npm run dev
+```
+
+- Otherwise simply run the backend by
+
+```bash
+npm run start
+```
+
+### Running Frontend 
+- From the project root go to frontend directory 
+
+```bash
+cd frontend/
+```
+- Execute this command to run your frontend on local network
+
+```bash
+sudo npm run dev
+```
+### Running VS code-server
+- Execute this command to run code server
+``` bash
+code-server 
+```
+- to make code server accesseble to other machines on network 
+```bash
+code-server --host 0.0.0.0
+```
+- To specify port for code-server on network
+- Port can be specified to any value
+```bash
+code-server --host 0.0.0.0 --port 5050 
+```
+
+- To Run code server without authuntication 
+```bash
+code-server --host 0.0.0.0 --port 5050 --auth none
+```
+
+### Access the website on network
+- type http://your-ip-address to access your web server
+```url
+http://0.0.0.0
+```
