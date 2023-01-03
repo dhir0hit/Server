@@ -10,12 +10,12 @@
 </dd>
 </dl>
 <br/>
-<span>🔴No encryption included yet❗🔴</span>
+<span>🔴Warning: No encryption included yet❗🔴</span>
 
 
 ## What Server Contains
 
-### Frontend Server
+### 1. Frontend Server
 - For UI/UX
 - using React on Vite.js
 
@@ -28,7 +28,9 @@
 | @vite                    | v4.0.0            |
 | @vitejs/plugin-react     | v3.0.0            |
 
-### Backend Server 
+<br/>
+
+### 2. Backend Server 
 - For API
 - using Express on Node.js 
 
@@ -40,9 +42,11 @@
 | @http-errors             | v1.6.3            |
 | @express                 | v4.16.1           |
 
+<br/>
 
-- VS code Server (v4.9.1)
-	- For editing and creating projects from remote machine
+### 3. VS code Server (v4.9.1)
+ - For editing and creating projects from remote machine
 
+<br/>
 
-### Frontend Server
+### 4. Includes Build for Android/IOS app
