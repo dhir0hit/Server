@@ -44,9 +44,20 @@
 * [What Server Contains](#what-server-contains)
   * [1. Frontend Server](#1-frontend-server)
   * [2. Backend Server](#2-backend-server)
-  * [3. Database MongoDB](#3-database-mongodb-v603)
-  * [4. VS code Server (v4.9.1)](#4-vs-code-server-v491)
+  * [3. Database MongoDB v6.0.3](#3-database-mongodb-v603)
+  * [4. VS code Server v4.9.1](#4-vs-code-server-v491)
   * [5. Includes Build for Android/IOS app](#5-includes-build-for-androidios-app)
+* [How to Setup Server](#how-to-setup-server)
+  * [Pre requirements](#pre-requirements)
+  * [Setting up project](#setting-up-project)
+  * [Setup Backend configurations](#setup-backend-configurations)
+  * [Setup frontend configurations](#setup-frontend-configurations)
+* [Running The Server](#running-the-server)
+  * [Running MongoDb](#running-mongodb)
+  * [Running Backend](#running-backend)
+  * [Running Frontend](#running-frontend)
+  * [Running VS code-server](#running-vs-code-server)
+* [Access the website on network](#access-the-website-on-network)
 <!-- TOC -->
 
 
