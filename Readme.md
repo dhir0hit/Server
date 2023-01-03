@@ -5,7 +5,7 @@
  - Frontend Server (For UI)
     - using React on Vite.js
  - Backend Server (For API)
-    - using Express
+    - using Express on Node.js
  - VS code Server
  
  ### Frontend Server
