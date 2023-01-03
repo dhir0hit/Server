@@ -48,7 +48,7 @@ const Alert = (props) => {
                     <button
                         className={"positive"}
                         onClick={()=>{
-                            props.Ok;
+                            props.Ok();
                             props.Cancel(true);
                         }}
                     >{Buttons[1]}</button>

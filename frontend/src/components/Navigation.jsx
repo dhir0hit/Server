@@ -53,12 +53,14 @@ const Navigation = () => {
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/pwdmanager">Password Manager</NavLink></li>
-                    <li><NavLink to="/contact">Contact</NavLink></li>
-                    <li><a href="http://10.0.0.112:5050/">Code Server</a></li>
+                    <li><a href="https://github.com/dhir0hit/Server/issues" target={"_blank"}>Contact</a></li>
+                    <li><a href="http://0.0.0.0:5050/" target={"_blank"}>Code Server</a></li>
                 </ul>
         </div>
         <script type='text/javascript'>
-            window.onresize = changeNavigation();
+            window.onresize = function (){
+                changeNavigation();
+            };
         </script>
         </>
     )

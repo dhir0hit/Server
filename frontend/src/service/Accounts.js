@@ -1,6 +1,6 @@
 
 import PasswordStrength from "../utils/PasswordStrength";
-
+import Config from "../../Config";
 
 export default class Accounts {
     constructor() {
@@ -48,7 +48,7 @@ export default class Accounts {
         * TODO: Create Connection with database
         * */
         try {
-            const response = await fetch('http://10.0.0.112:5000/pwdmanager/get-all');
+            const response = await fetch(Config.GetAllAccountsLink());
             const data = await response.json();
             return data;
         } catch (e) {
@@ -96,7 +96,7 @@ export default class Accounts {
                 editedOn: current_date.toString()
             }
             
-            fetch('http://10.0.0.112:5000/pwdmanager/create', {
+            fetch(Config.CreateAccountLink(), {
                 method: 'POST',
                 mode: 'cors',
                 body: JSON.stringify({
@@ -117,15 +117,14 @@ export default class Accounts {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    console.log("Saved")
+                    // Updating Locally
                     this.List.push(account);
-                } else {
-                    console.log("NOT Saved")
+                    console.log("Saved");
+                    return 1;
                 }
+                console.log("NOT Saved");
+                return 0;
             })
-            // TODO: Add account to database
-            // fetch(`http://10.0.0.112:5000/pwdmanager/update?id=${id}&username=dhir0hit&password=rohitkumardhir&platform=google&website=www.google.com&additionalInfo=info for accounts&favorite=0&createdOn=10-12-2002&editedOn=12-12-2020`)
-            console.log(account)
         })
 
 
@@ -140,12 +139,63 @@ export default class Accounts {
      * Update Account from database
      * and update from list
      * */
-    UpdateAccount(newAccount) {
-        this.List.map((account) => {
-            return account.id === newAccount.id
-                ? newAccount
-                : account;
+    UpdateAccount(Id,
+                  username, 
+                  password,
+                  platform, 
+                  website, 
+                  additionalInfo, 
+                  favorite, 
+                  createdOn) {
+        this.load_data()
+        .then(data => this.List = data)
+        .then (() => {
+            let current_date = new Date();
+            let newAccount = {
+                id: Id,
+                username: username, 
+                password: password,
+                platform: website,
+                additionalInfo: additionalInfo,
+                favorite: favorite,
+                createdOn: createdOn,
+                editedOn: current_date.toString()
+            }
+            
+            fetch(Config.UpdateAccountLink(), {
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify({
+                    id: Id,
+                    username: username,
+                    password: password,
+                    platform: platform,
+                    website: website,
+                    additionalInfo: additionalInfo,
+                    favorite: favorite,
+                    createdOn: createdOn,
+                    editedOn: current_date.toString()
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    // Updating Locally
+                    this.List.map((account) => {
+                        return account.id === newAccount.id
+                        ? newAccount
+                        : account;
+                    })
+                    console.log("Updated")
+                } else {
+                    console.log("NOT Updated")
+                }
+            })
         })
+        
         // TODO: Update Account from database
         this.empty_filters();
         // Calculate Strength
@@ -159,9 +209,34 @@ export default class Accounts {
      * and remove form list
      * */
     DeleteAccount(id) {
-        this.List = this.List.filter((account) => {
-            return account.id !== id;
-        });
+        this.load_data()
+        .then(data=>this.List = data)
+        .then(() => {
+            fetch(Config.DeleteAccountLink(), {
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify({
+                    id: id
+                }), 
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    // Updating data Locally
+
+                    this.List = this.List.filter((account) => {
+                        return account.id !== id;
+                    });
+                    console.log('Deleted');
+                } else {
+                    console.log('Not Deleted');
+                }
+            })
+        })
+
         // TODO: Delete account from database
         this.empty_filters();
         // Calculate Strength

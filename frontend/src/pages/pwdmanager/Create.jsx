@@ -1,23 +1,23 @@
 // importing inbuilt components
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 // importing components
 import { PManagerNavigation } from '../../components/Navigation';
 
 // importing validations
-import { UsernameValidation, PasswordValidation, PlatformValidation } from "../../utils/validations"
+import { UsernameValidation, 
+    PasswordValidation, 
+    PlatformValidation } from "../../utils/validations"
 
 /*
 
-
 show loading in button when pressed add account
-
 
 */
 
 
 function Create (props) {
-
     const [VisiblityIcon, setVisibleIcon] = useState('visibility');
 
     const [username, setUsername] = useState('');
@@ -30,9 +30,12 @@ function Create (props) {
     const [usernameValid, setUsernameValid] = useState(0);
     const [passwordValid, setPasswordValid] = useState(0);
     const [platformValid, setPlatformValid] = useState(0);
-
+    
     const [passwordStrength, setPasswordStrength] = useState(0);
-
+    
+    const [Error, setError] = useState('');
+    
+    const navigate = useNavigate();
 
     // use validations here
     const validate = () => {
@@ -80,7 +83,16 @@ function Create (props) {
     }
 
     const Submit = () => {
-        props.service.CreateAccount(username, password, platform ,website, additionalInfo, favorite)
+        props.service.CreateAccount(
+            username,
+            password,
+            platform,
+            website, 
+            additionalInfo, 
+            favorite
+        )
+        // Going back a page from history
+        navigate(-1)
     }
 
     return (

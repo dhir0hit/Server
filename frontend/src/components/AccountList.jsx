@@ -2,7 +2,7 @@ import Icons from './Icons'
 
 const AccountList = (props) => {
     return (
-        <div className="account-list">
+        <div className="pwdmanager account-list">
             {props.data.map(data => (
                     <AccountElement
                         key={data.id}

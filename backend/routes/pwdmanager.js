@@ -37,6 +37,9 @@ router.post('/create', function(req, res, next) {
     let db = req.db;
     let collection = db.get('pwdmanager');
 
+    console.log();
+    console.log(`[*] Create Account request created`)
+
     if (req.body.id &&
         req.body.username &&
         req.body.password &&
@@ -56,21 +59,27 @@ router.post('/create', function(req, res, next) {
                 },
                 function (error, result) {
                     if (error) {
+                        console.log(`[-] Create Account failed \nlog:${error}`)
                         res.send('0');
                     } else {
+                        console.log(`[+] Created Account with id:${req.body.id}`)
                         res.send('1');
                     }
                 }
         )
     } else {
         res.send('0');
+        console.log(`[-] Create Account failed \nlog:Missing Credentials`)
     }
-
+    console.log();
 });
 
 router.post('/update', function(req, res, next) {
     let db = req.db;
     let collection = db.get('pwdmanager');
+
+    console.log();
+    console.log(`[*] Update request for id:${req.body.id} created`)
 
     collection.update(
         {id: parseInt(req.body.id)},
@@ -80,32 +89,43 @@ router.post('/update', function(req, res, next) {
             platform: req.body.platform,
             website: req.body.website,
             additionalInfo: req.body.additionalInfo,
-            favorite: req.body.favorite == 1 ? true : false,
+            favorite: req.body.favorite,
             createdOn: req.body.createdOn,
             editedOn: req.body.editedOn
         }},
         function (error, result) {
             if (error) {
-                res.send('0')
+                res.send('0');
+                console.log(`[-] Update Account Faliure with id:${req.body.id} \nlog:${error}`);
+            } else{ 
+                res.send('1');
+                console.log(`[+] Updated Acount id:${req.params.id}`)
             }
-            res.send('1')
         }
     )
+    console.log();
 });
 
 router.post('/delete', function(req, res, next) {
     let db = req.db;
     let collection = db.get('pwdmanager');
 
+    console.log();
+    console.log(`[*] Delete request for id:${req.body.id} created`)
+
     collection.remove(
         {id: parseInt(req.body.id)},
         function (error, result) {
             if (error) {
-               res.send('0') ;
+                console.log(`[-] Delete Account Faliure id:${req.body.id} \nlog:${error}`)
+                res.send('0') ;
+            } else {
+                console.log(`[+] Deleted Acount id:${req.body.id}`);
+                res.send('1');
             }
-            res.send('1');
         }
     )
+    console.log();
 });
 
 

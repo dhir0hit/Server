@@ -223,6 +223,7 @@ main.pwdmanager.create form button:active {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 5px;
   padding-inline: 1.5rem;
 }
 .pwdmanager.detail .midcontainer div div {
@@ -230,10 +231,17 @@ main.pwdmanager.create form button:active {
   padding: 0;
 }
 .pwdmanager.detail .midcontainer div div button {
+  /*COPY BUTTON*/
   background: transparent;
   border: none;
 }
-.pwdmanager.detail .midcontainer div div button svg {
+.pwdmanager.detail .midcontainer div div button span {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(78, 78, 78, 0.486);
+  border-radius: 20%;
+  padding: 5px;
+}
+.pwdmanager.detail .midcontainer div div button span svg {
   width: 20px;
   height: 20px;
 }
@@ -298,8 +306,6 @@ main.pwdmanager.create form button:active {
   flex-direction: column;
   flex: 1;
   margin-block: 1px;
-  overflow-y: scroll;
-  height: 85%;
 }
 
 .account-element {
@@ -585,63 +591,14 @@ main.pwdmanager.create form button:active {
   background: #272640;
 }
 
-@keyfram child1 {
-  from {
-    rotate: 0deg;
-  }
-  to {
-    rotate: 360deg;
-  }
-}
 .Loading {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.Loading div {
-  position: relative;
-}
-.Loading div div {
-  position: absolute;
-  font-size: 3rem;
-  font-family: "Major Mono Display", monospace;
-}
-.Loading div div:nth-child(1) {
-  transition: transform 0.7s linear 0s, rotate 5s linear 0.7s;
-}
-.Loading div div:nth-child(2) {
-  transition: transform 0.7s linear 0.5s, rotate 5s linear 1.2s;
-}
-.Loading div div:nth-child(3) {
-  transition: transform 0.7s linear 1s, rotate 5s linear 1.7s;
-}
-.Loading div div:nth-child(4) {
-  transition: transform 0.7s linear 1.5s, rotate 5s linear 2.2s;
-}
-.Loading div div:nth-child(5) {
-  transition: transform 0.7s linear 2s, rotate 5s linear 2.7s;
-}
-.Loading div div:nth-child(6) {
-  transition: transform 0.7s linear 2.5s, rotate 5s linear 3.2s;
-}
-.Loading div div:nth-child(7) {
-  transition: transform 0.7s linear 3s, rotate 5s linear 3.7s;
-}
-.Loading div div:nth-child(8) {
-  transition: transform 0.7s linear 3.5s, rotate 5s linear 4.2s;
-}
-.Loading div div:nth-child(9) {
-  transition: transform 0.7s linear 4s, rotate 5s linear 4.7s;
-}
-.Loading div div:nth-child(10) {
-  transition: transform 0.7s linear 4.5s, rotate 5s linear 5.2s;
-}
-.Loading:hover div div {
-  transform: translate(-100px);
-  rotate: 360deg;
+  transform: translateY(-50px);
 }
 
 #alert {
@@ -664,7 +621,7 @@ main.pwdmanager.create form button:active {
   padding-block: 1rem;
   padding-inline: 2rem;
   flex-direction: column;
-  background-color: black;
+  background: #f5f3f4;
 }
 #alert .hover.container * {
   padding: 0;
@@ -709,6 +666,10 @@ main.pwdmanager.create form button:active {
   background: rgba(255, 255, 255, 0.4);
 }
 
+.dark_color_scheme #alert .hover.container {
+  background: #272640;
+}
+
 * {
   box-sizing: border-box;
   color: #272640;
@@ -740,7 +701,6 @@ body {
   width: 100vw;
   height: 100vh;
   max-width: 1500px;
-  overflow: hidden;
 }
 
 .dark_color_scheme {

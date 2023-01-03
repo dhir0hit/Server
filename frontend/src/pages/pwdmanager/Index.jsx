@@ -10,12 +10,10 @@ function Index (props) {
     const [Data, setData] = useState([]);
 
     useEffect(() => {
-        if (Data.length===0) {
         let accounts = props.service;
         accounts.load_data()
         .then((data)=>setData(data))
-        }
-    })
+    }, [Data])
 
     return (
         <>

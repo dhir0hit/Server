@@ -13,6 +13,7 @@ import Navigation from "./components/Navigation";
 import Loading from "./components/Loading";
 
 // Importing Pages
+const HomeIndex = lazy(() => import('./pages/home/Index'));
 const PwdManagerIndex = lazy(() => import('./pages/pwdmanager/Index'));
 const PwdManagerDetail = lazy(() => import('./pages/pwdmanager/Detail'));
 const PwdManagerCreate = lazy(() => import('./pages/pwdmanager/Create'));
@@ -26,11 +27,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Navigation/>
       <Suspense fallback={<Loading />}>
           <Routes>
-              <Route path={'/loading'} element={<Loading />} />
-              <Route path={'/pwdmanager'} element={<PwdManagerIndex service={Account_Service} />} />
-              <Route path={'/pwdmanager/home'} element={<PwdManagerIndex service={Account_Service} />} />
-              <Route path={'/pwdmanager/create'} element={<PwdManagerCreate service={Account_Service} />} />
-              <Route path={'/pwdmanager/account/:id'} element={<PwdManagerDetail service={Account_Service} />} />
+                <Route path={'/'} element={<HomeIndex />} />
+                <Route path={'/loading'} element={<Loading />} />
+                <Route path={'/pwdmanager'} element={<PwdManagerIndex service={Account_Service} />} />
+                <Route path={'/pwdmanager/home'} element={<PwdManagerIndex service={Account_Service} />} />
+                <Route path={'/pwdmanager/create'} element={<PwdManagerCreate service={Account_Service} />} />
+                <Route path={'/pwdmanager/account/:id'} element={<PwdManagerDetail service={Account_Service} />} />
           </Routes>
       </Suspense>
       </BrowserRouter>

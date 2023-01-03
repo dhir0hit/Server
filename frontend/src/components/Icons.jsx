@@ -21,7 +21,11 @@ import { GoogleOutlined,
 } from '@ant-design/icons';
 
 const Icons = (props) => {
-    switch (props.name.toLowerCase()) {
+    let iconName = '';
+    if (props.name !== undefined) {
+        iconName = props.name;
+    }
+    switch (iconName.toLowerCase()) {
         case 'copy':
             return <CopyFilled />;
         case 'close':

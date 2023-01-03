@@ -58,6 +58,6 @@ export default class PasswordStrength {
     }
 
     get StrengthPercentage() {
-        return this.strength
+        return this.strength > 100 ? 100 : this.strength;
     }
 }
