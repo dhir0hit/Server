@@ -363,6 +363,11 @@ code-server --host 0.0.0.0 --port 5050
 code-server --host 0.0.0.0 --port 5050 --auth none
 ```
 
+- To Run code server with root permissions
+```bash
+sudo code-server --host 0.0.0.0 --port 5050 --auth none
+```
+
 ### Access the website on network
 - type http://your-ip-address to access your web server
 ```url
