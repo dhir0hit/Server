@@ -13,6 +13,7 @@ function Index (props) {
         let accounts = props.service;
         accounts.load_data()
         .then((data)=>setData(data))
+// TODO: use Data.length to reduce redundant api calls
     }, [Data])
 
     return (
