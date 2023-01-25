@@ -106,7 +106,6 @@
 <br/>
 
 ### 5. Includes Build for Android/IOS app
-// to be included
 Visit <a href="https://github.com/dhir0hit/my-app">dhir0hit/my-app<a> to Install App for this Server
 <br/> 
 
